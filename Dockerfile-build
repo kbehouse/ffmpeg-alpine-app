@@ -1,0 +1,9 @@
+FROM alpine:3.10
+MAINTAINER Kartik, Chen <kbehouse@gmail.com>
+
+WORKDIR /build
+COPY . /build
+RUN apk upgrade -U \
+ && apk add  ffmpeg-dev build-base  \
+ && apk add bash bash-completion \
+ && rm -rf /var/cache/*
